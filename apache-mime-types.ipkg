@@ -1,4 +1,4 @@
-package idris2-apach2-mime-types
+package apache-mime-types
 authors = "Bertalan Kis"
 
 modules = Data.Mime.Apache

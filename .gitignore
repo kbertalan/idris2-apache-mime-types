@@ -1,2 +1,3 @@
 build
-src/Data/Mime/Apache/Raw.idr
+mime.types
+interpreted.mime.types

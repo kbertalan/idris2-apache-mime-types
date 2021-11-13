@@ -1,4 +1,4 @@
-package=idris2-apache-mime-types.ipkg
+package=apache-mime-types.ipkg
 idris2=idris2
 
 .PHONY: build clean install
