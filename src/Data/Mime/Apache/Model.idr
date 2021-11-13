@@ -31,7 +31,11 @@ implementation Show MainType where
 public export
 record Mime where
   constructor MkMime
-  maintype : MainType
+  mainType : MainType
   subType : String
   extensions : List String
+
+export
+implementation Show Mime where
+  show mime = "\{show mime.mainType}/\{mime.subType}"
 
