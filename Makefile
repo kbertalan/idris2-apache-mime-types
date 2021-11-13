@@ -13,7 +13,7 @@ repl:
 	rlwrap $(idris2) --repl $(package)
 
 install:
-	$(idris2) --install $(package) --codegen $(codegen)
+	$(idris2) --install $(package)
 
 dev:
 	(find src/ -name *.idr; echo generate.sh) | entr make build

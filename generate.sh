@@ -2,7 +2,7 @@
 
 mkdir -p src/Data/Mime/Apache
 output="src/Data/Mime/Apache/Raw.idr"
-# curl https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types > mime.types
+curl https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types > mime.types
 cat <<EOF > $output
 module Data.Mime.Apache.Raw
 
@@ -77,5 +77,5 @@ $ a\
   ]
 ' >> $output
 
-# rm mime.types 
+rm mime.types 
 rm interpreted.mime.types
