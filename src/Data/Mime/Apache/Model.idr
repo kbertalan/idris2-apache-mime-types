@@ -28,6 +28,21 @@ implementation Show MainType where
   show Video       = "video"
   show XConference = "x-conference"
 
+export
+implementation Eq MainType where
+  (==) Application Application = True
+  (==) Audio Audio = True
+  (==) Chemical Chemical = True
+  (==) Font Font = True
+  (==) Image Image = True
+  (==) Message Message = True
+  (==) Model Model = True
+  (==) Multipart Multipart = True
+  (==) Text Text = True
+  (==) Video Video = True
+  (==) XConference XConference = True
+  (==) _ _ = False
+
 public export
 record Mime where
   constructor MkMime
@@ -38,4 +53,10 @@ record Mime where
 export
 implementation Show Mime where
   show mime = "\{show mime.mainType}/\{mime.subType}"
+
+export
+implementation Eq Mime where
+  (==) a b = a.mainType == b.mainType
+          && a.subType == b.subType
+          && a.extensions == b.extensions
 
