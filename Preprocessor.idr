@@ -55,10 +55,9 @@ read_line_or_eof file = do
   map Just $ MkEitherT $ fGetLine file
 
 read_from_file : HasIO io => String -> io (Either FileError (List MimeRecord))
-read_from_file file = runEitherT $ do
-  handle <- MkEitherT {m=io} (openFile file Read)
+read_from_file file = withFile file Read pure $ \handle => runEitherT $ do
   skip_comments handle
-  go [] handle
+  reverse <$> go [] handle
   where
     skip_comments : File -> EitherT FileError io ()
     skip_comments file = do
