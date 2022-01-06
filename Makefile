@@ -17,4 +17,3 @@ install:
 
 dev:
 	(find src/ -name *.idr; echo generate.sh) | entr make build
-
