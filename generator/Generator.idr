@@ -1,4 +1,4 @@
-module Preprocessor
+module Generator
 
 import System.File.ReadWrite
 import System.File.Handle
@@ -8,7 +8,6 @@ import Control.Monad.Trans
 import Data.List1
 import Data.List
 import Data.String
-import Data.String.Extra
 
 record MimeRecord where
   constructor MkMimeRecord
@@ -74,12 +73,12 @@ read_from_file file = withFile file Read pure $ \handle => runEitherT $ do
 
 generate_declaration : MimeRecord -> String
 generate_declaration mime =
-  join "\n" $
-  [ "export"
-  , "\{record_to_declaration_name mime} : Mime"
-  , "\{record_to_declaration_name mime} = MkMime \{record_to_main_type mime} \{show (record_to_sub_type mime)} \{show mime.mime_exts}"
-  , ""
-  ]
+  """
+  export
+  \{record_to_declaration_name mime} : Mime
+  \{record_to_declaration_name mime} = MkMime \{record_to_main_type mime} \{show (record_to_sub_type mime)} \{show mime.mime_exts}
+  
+  """
 
 generate_mime_declaration : List MimeRecord -> IO ()
 generate_mime_declaration [] = putStrLn "  []"
@@ -102,7 +101,7 @@ export
 partial
 generate_source : IO ()
 generate_source = do
-  Right file <- read_from_file "mime.types"
+  Right file <- read_from_file "../mime.types"
   | Left err => idris_crash "error: \{show err}"
   putStrLn "module Data.Mime.Apache.Raw"
   putStrLn ""

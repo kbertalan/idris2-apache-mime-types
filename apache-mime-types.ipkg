@@ -1,12 +1,9 @@
 package apache-mime-types
 authors = "Bertalan Kis"
 
-depends = base    >= 0.5.1
-        , contrib >= 0.5.1
-
 modules = Data.Mime.Apache
         , Data.Mime.Apache.Model
         , Data.Mime.Apache.Raw
 
 sourcedir = "src"
-prebuild = "./generate.sh"
+prebuild = "./generator/generate.sh"
