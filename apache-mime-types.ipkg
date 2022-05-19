@@ -6,4 +6,3 @@ modules = Data.Mime.Apache
         , Data.Mime.Apache.Raw
 
 sourcedir = "src"
-prebuild = "./generator/generate.sh"
