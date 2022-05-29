@@ -520,7 +520,7 @@ APPLICATION_JAVA_VM = MkMime Application "java-vm" ["class"]
 
 export
 APPLICATION_JAVASCRIPT : Mime
-APPLICATION_JAVASCRIPT = MkMime Application "javascript" ["js"]
+APPLICATION_JAVASCRIPT = MkMime Application "javascript" []
 
 export
 APPLICATION_JOSE : Mime
@@ -6696,7 +6696,7 @@ TEXT_HTML = MkMime Text "html" ["html", "htm"]
 
 export
 TEXT_JAVASCRIPT : Mime
-TEXT_JAVASCRIPT = MkMime Text "javascript" []
+TEXT_JAVASCRIPT = MkMime Text "javascript" ["js", "mjs"]
 
 export
 TEXT_JCR_CND : Mime
@@ -9240,7 +9240,6 @@ extensions =
   , ("jar", APPLICATION_JAVA_ARCHIVE)
   , ("ser", APPLICATION_JAVA_SERIALIZED_OBJECT)
   , ("class", APPLICATION_JAVA_VM)
-  , ("js", APPLICATION_JAVASCRIPT)
   , ("json", APPLICATION_JSON)
   , ("jsonml", APPLICATION_JSONML_PLUS_JSON)
   , ("lostxml", APPLICATION_LOST_PLUS_XML)
@@ -10076,6 +10075,8 @@ extensions =
   , ("csv", TEXT_CSV)
   , ("html", TEXT_HTML)
   , ("htm", TEXT_HTML)
+  , ("js", TEXT_JAVASCRIPT)
+  , ("mjs", TEXT_JAVASCRIPT)
   , ("n3", TEXT_N3)
   , ("txt", TEXT_PLAIN)
   , ("text", TEXT_PLAIN)
