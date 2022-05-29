@@ -1,5 +1,6 @@
 package apache-mime-types
 authors = "Bertalan Kis"
+version = 1.0
 
 modules = Data.Mime.Apache
         , Data.Mime.Apache.Model
