@@ -1,9 +1,12 @@
 package apache-mime-types
 authors = "Bertalan Kis"
-version = 1.0
+version = 1.0.1
 
 modules = Data.Mime.Apache
         , Data.Mime.Apache.Model
         , Data.Mime.Apache.Raw
 
 sourcedir = "src"
+
+brief = "Mime types db based on Apache HTTPD dataset"
+
