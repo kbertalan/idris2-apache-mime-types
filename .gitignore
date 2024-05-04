@@ -1,4 +1,6 @@
 build
 mime.types
 .build/
+.direnv/
+.pack/
 generator/NewTypes.idr
