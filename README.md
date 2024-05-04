@@ -11,5 +11,4 @@ The build can be executed with
 
 or
 
-    make build
-
+    pack build apache-mime-types.ipkg

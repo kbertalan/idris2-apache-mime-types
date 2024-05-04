@@ -1,0 +1,4 @@
+[custom.all.apache-mime-types]
+type = "local"
+path = "."
+ipkg = "apache-mime-types.ipkg"
